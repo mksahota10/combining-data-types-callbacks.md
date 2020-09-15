@@ -1,0 +1,123 @@
+
+
+//DRY
+// It's keeping your code simple and not having to repeat the same function again and again, easy to follow only in once place. 
+// //KISS
+// Keep code simple as possible and easy to follow, no need to make it complex. 
+// //Avoid creating a YAGNI
+// Only use certain things as needed and when appropriate. 
+
+// //Do the simplest thing that could possibly work
+// Don't get fancy for no reason, use the simple functions first before thinking you need to make things complex. 
+ 
+// Don't make me think
+// Anything you do, make it simple for the user, it should be user friendly. The user should not be fustrated with trying to make it work. 
+
+// //Write code for the maintainer
+// If someone has to make changes on your work later, make sure it is easy to read and follow. Don't complicated things for them. 
+
+// //Single responsibility principle
+// I'm not sure what this means, it's confusing for me. But does this mean every function or code should have a purpose and shouldn't have multiple uses for the code, not extra meaning besides it's purpose. 
+
+// //Avoid premature optimization
+// Take your time with the code, learn and understand everything before moving on and trying to finish and run a premature project.
+
+// //Separation of concerns
+// This one is very confusing. 
+// I understand it as, codes should not overlap with other codes. Each line of code should have it's own set and not be manipluate the other codes. 
+
+
+
+const f = l => {
+  let es = 0, p = 0, c = 1, n = 0
+  //console.log (l);
+  while (c <= l) {
+    n = c + p;
+    //console.log(c);
+    [c, p] = [n, c]
+    es += (c % 2 === 0) ? c : 0
+
+    //if statement 
+    //
+  }// % is the remainder 
+  //always return 1 if n is odd, and 0 if n is even, since returning 2 would mean that another 2 could be taken out of n, returning 0.
+  //
+ return es
+
+}
+
+ console.log(f(55))
+// console.log(f(44))
+// console.log 
+// console.log(f(0))
+// console.log(f(1))
+// console.log(f(12))
+
+
+
+
+// f delclated as a variable =
+// l is the function
+// let es p c and n are variables given a value that may change
+// while loop while (c is less than equal to l) go inside the loop and execute the fucntion { n = c + p } n = 1.
+// [1,0] = [0,1]
+// l= 55
+// es =0, 
+
+
+const f2 = (limit) => {
+  let evenSum = 0;
+  let previous = 0;
+  let current = 1;
+  while (current <= limit) {
+    let next = current + previous;
+    previous = current;
+    current = next;
+    if (current % 2 === 0) {
+      evenSum += current;
+    }
+  }
+  return evenSum;
+}
+
+
+console.log(f2(20))
+
+//it seems like a small function to return even values and even additions. 
+//Parametereized the limit at 55.
+// 
+
+
+
+
+
+
+
+
+
+
+
+
+const f = l => {
+    // define each variable and assign it to a number
+    let es = 0, p = 0, c = 1, n = 0
+    // create a loop to iterate through equations while the variable is less than the parameter
+    while (c <= l) {
+      // set variable n to be the sum of variable c and variable p
+      n = c + p;
+      //p variable = c variable &&&& c variable = n variable
+      [c, p] = [n, c]
+      // if c is even, return c and add it to variable es and loop again
+      // else return 0 and loop again
+      es += (c % 2 === 0) ? c : 0
+    }
+    // return the total of es after completing the loop
+    return es
+  }
+​
+  //run function f with parameter set to 55 and console.log the es variable (sum)
+​
+  console.log(f(55))
+
+
+
